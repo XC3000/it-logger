@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Preloader from "../layout/Preloader";
 import LogItem from "./LogItem";
 
 const Logs = () => {
@@ -19,7 +20,7 @@ const Logs = () => {
   };
 
   if (loading) {
-    return <h4>Loading</h4>;
+    return <Preloader />;
   }
 
   return (
@@ -30,7 +31,7 @@ const Logs = () => {
       {!loading && logs.length === 0 ? (
         <p className="center">No logs to show...</p>
       ) : (
-        logs.map((log, index) => <LogItem log={log} key={log.id} />)
+        logs.map((log) => <LogItem log={log} key={log.id} />)
       )}
     </ul>
   );
