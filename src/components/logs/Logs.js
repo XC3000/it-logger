@@ -30,12 +30,13 @@ const Logs = ({ log: { logs, loading } }) => {
   );
 };
 
-Logs.PropTypes = {
+
+Logs.propTypes = {
   log: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  log: state.log,
+const mapStateToProps = state => ({
+  log: state.log
 });
 
 export default connect(mapStateToProps, getLogs)(Logs);
